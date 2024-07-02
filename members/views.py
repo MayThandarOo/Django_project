@@ -24,9 +24,8 @@ def main(request):
   return HttpResponse(template.render())
 
 def testing(request):
-  mydata = Member.objects.all().order_by('firstname').values()
   template = loader.get_template('template.html')
   context = {
-    'mymembers': mydata,
+    'fruits': ['Apple', 'Banana', 'Cherry'],   
   }
   return HttpResponse(template.render(context, request))     
